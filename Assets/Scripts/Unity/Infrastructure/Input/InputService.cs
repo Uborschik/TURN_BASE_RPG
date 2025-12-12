@@ -1,11 +1,10 @@
-﻿using GameUnity.Infrastructure.Services.Interfaces;
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace GameUnity.Infrastructure.Services
 {
-    public class InputService : IInputService<Vector2>, IDisposable
+    public class InputService : IDisposable
     {
         private readonly InputActions actions;
 

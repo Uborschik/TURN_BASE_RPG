@@ -1,6 +1,5 @@
-﻿using GameCore.Grid.Interfaces;
-using GameInfrastructure.Pathfinder.Interfaces;
-using GameUnity.Infrastructure.Interfaces;
+﻿using GameCore.Grid;
+using GameInfrastructure.Pathfinder;
 using GameUnity.Utils.Extensions;
 using UnityEngine;
 
@@ -8,8 +7,8 @@ namespace GameUnity.Views
 {
     public class GlobalView
     {
-        private readonly IGridSystem grid;
-        private readonly IPathfinder pathfinder;
+        private readonly GridSystem grid;
+        private readonly AStarPathfinder pathfinder;
         private readonly GridView gridView;
         private readonly PathView pathView;
         private readonly CellSelectionView cellSelectionView;
@@ -17,10 +16,10 @@ namespace GameUnity.Views
         private Vector2? rawStart;
         private Vector2? rawEnd;
 
-        public GlobalView(IServiceLocator serviceLocator, GridView gridView, PathView pathView, CellSelectionView cellSelectionView)
+        public GlobalView(GridSystem grid, AStarPathfinder pathfinder, GridView gridView, PathView pathView, CellSelectionView cellSelectionView)
         {
-            grid = serviceLocator.Get<IGridSystem>();
-            pathfinder = serviceLocator.Get<IPathfinder>();
+            this.grid = grid;
+            this.pathfinder = pathfinder;
             this.gridView = gridView;
             this.pathView = pathView;
             this.cellSelectionView = cellSelectionView;

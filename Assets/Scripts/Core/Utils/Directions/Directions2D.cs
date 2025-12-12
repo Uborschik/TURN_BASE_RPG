@@ -15,9 +15,9 @@ namespace GameCore.Utils.Directions
         public static readonly Position2Int[] DiagonalDirections = new Position2Int[]
         {
             new( 1,  1),
-            new(-1,  1),
+            new( 1, -1),
             new(-1, -1),
-            new( 1, -1)
+            new( 1,  1)
         };
 
         public static readonly Position2Int[] EightDirections = new Position2Int[]

@@ -532,7 +532,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2010909679}
   - component: {fileID: 2010909680}
-  - component: {fileID: 2010909681}
   m_Layer: 0
   m_Name: CompositionRoot
   m_TagString: Untagged
@@ -564,29 +563,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2010909676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 587015188ed25bf408dbdaca2468d0fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 80aa07d5f35f4a543b15de2148df2649, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Game.Unity::GameUnity.CompositionRoot
+  m_EditorClassIdentifier: Game.Unity::GameUnity.Composition.GameBootstrap
   gridSettings: {fileID: 11400000, guid: c55997d903c1d814aa446f2ccca37a4e, type: 2}
---- !u!114 &2010909681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010909676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554f6b6556fe2964fb71acb4d2ddc9e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Game.Unity::GameUnity.Infrastructure.VisualizationBootstrap
-  mainCamera: {fileID: 519420031}
-  mainTilemap: {fileID: 2092367776}
-  linePrefab: {fileID: 3705118690099070314}
-  highlightedTileObj: {fileID: 357351866}
-  selectedTileObj: {fileID: 1427964613}
   gridViewSettings: {fileID: 11400000, guid: c25501d1cc7a8bd4fad526607e09b024, type: 2}
   pathViewSettings: {fileID: 11400000, guid: 69fdff92fffaba94ea3b8f2013fbebf5, type: 2}
+  mainCamera: {fileID: 519420031}
+  tilemap: {fileID: 2092367776}
+  lineRenderer: {fileID: 3705118690099070314}
+  highlightTile: {fileID: 357351866}
+  selectTile: {fileID: 1427964613}
 --- !u!1 &2092367773
 GameObject:
   m_ObjectHideFlags: 0

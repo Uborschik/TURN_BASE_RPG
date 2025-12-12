@@ -1,9 +1,8 @@
-using GameCore.Units.Interfaces;
 using GameCore.Utils.Positions;
 
 namespace GameCore.Units
 {
-    public class UnitData : IUnit
+    public class UnitData
     {
         public Position2Int Position { get; set; }
         public bool IsAlive { get; set; } = true;

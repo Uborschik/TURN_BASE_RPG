@@ -1,13 +1,13 @@
 using GameCore.Grid.Interfaces;
-using GameUnity.Adapters.Interfaces;
+using GameUnity.Adapters;
 
 namespace GameUnity.Views
 {
     public class GridView
     {
-        private readonly IGridRenderer renderer;
+        private readonly TilemapAdapter renderer;
 
-        public GridView(IGridRenderer renderer)
+        public GridView(TilemapAdapter renderer)
         {
             this.renderer = renderer;
         }

@@ -10,12 +10,5 @@ namespace GameUnity.Settings
         public int Width = 20;
         public int Height = 20;
         public float CellSize = 1f;
-
-        [SerializeReference] public MovementCostProviderBase MovementCostProvider;
-
-        public GridConfig ToGridConfig()
-        {
-            return new GridConfig(Width, Height, CellSize, MovementCostProvider);
-        }
     }
 }

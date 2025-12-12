@@ -1,21 +1,20 @@
-﻿using GameCore.Grid.Interfaces;
-using GameCore.Units.Interfaces;
+﻿using GameCore.Units;
 using GameCore.Utils.Positions;
 using System.Collections.Generic;
 
 namespace GameCore.Grid
 {
-    public class GridBlackboard : IGridOccupancy
+    public class GridBlackboard
     {
-        private readonly IGridSystem grid;
-        private readonly Dictionary<Position2Int, IUnit> allUnits = new();
+        private readonly GridSystem grid;
+        private readonly Dictionary<Position2Int, UnitData> allUnits = new();
 
-        public GridBlackboard(IGridSystem grid)
+        public GridBlackboard(GridSystem grid)
         {
             this.grid = grid;
         }
 
-        public void PlaceUnit(IUnit unit, Position2Int position)
+        public void PlaceUnit(UnitData unit, Position2Int position)
         {
             if (!grid.Contains(position)) return;
 
@@ -34,7 +33,7 @@ namespace GameCore.Grid
             }
         }
 
-        public void RemoveUnit(IUnit unit)
+        public void RemoveUnit(UnitData unit)
         {
             if (grid.Contains(unit.Position))
             {
@@ -44,7 +43,7 @@ namespace GameCore.Grid
             allUnits.Remove(unit.Position);
         }
 
-        public IUnit GetUnitAt(Position2Int position) => allUnits.TryGetValue(position, out var unit) ? unit : null;
+        public UnitData GetUnitAt(Position2Int position) => allUnits.TryGetValue(position, out var unit) ? unit : null;
 
         public bool IsCellFree(Position2Int position) => GetUnitAt(position) == null;
     }

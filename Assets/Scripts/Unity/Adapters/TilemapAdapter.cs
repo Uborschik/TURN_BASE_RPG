@@ -1,11 +1,10 @@
-﻿using GameUnity.Adapters.Interfaces;
-using GameUnity.Settings;
+﻿using GameUnity.Settings;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace GameUnity.Adapters
 {
-    public class TilemapAdapter : IGridRenderer
+    public class TilemapAdapter
     {
         private readonly Tilemap tilemap;
         private readonly TileBase walkableTile;

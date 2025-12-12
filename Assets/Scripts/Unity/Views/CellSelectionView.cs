@@ -7,6 +7,18 @@ using static UnityEditor.PlayerSettings;
 
 namespace GameUnity.Views
 {
+    public class SelectionTransforms
+    {
+        public Transform Highlight { get; }
+        public Transform Select { get; }
+
+        public SelectionTransforms(Transform highlight, Transform select)
+        {
+            Highlight = highlight;
+            Select = select;
+        }
+    }
+
     public class CellSelectionView
     {
         private readonly Transform highlightedTileObj;
@@ -15,10 +27,10 @@ namespace GameUnity.Views
         private Vector3 previousHighlightPosition;
         private Vector3? previousSelectPosition;
 
-        public CellSelectionView(Transform highlightedTileObj, Transform selectedTileObj)
+        public CellSelectionView(SelectionTransforms transforms)
         {
-            this.highlightedTileObj = highlightedTileObj;
-            this.selectedTileObj = selectedTileObj;
+            highlightedTileObj = transforms.Highlight;
+            selectedTileObj = transforms.Select;
 
             highlightedTileObj.gameObject.SetActive(false);
             selectedTileObj.gameObject.SetActive(false);

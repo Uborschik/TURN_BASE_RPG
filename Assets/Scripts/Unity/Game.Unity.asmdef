@@ -3,9 +3,10 @@
     "rootNamespace": "",
     "references": [
         "Unity.InputSystem",
+        "VContainer",
+        "VContainer.Editor",
         "Game.Core",
-        "Game.Infrastructure",
-        "Game.Data"
+        "Game.Infrastructure"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

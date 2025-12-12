@@ -1,13 +1,12 @@
 ﻿using GameCore.Grid;
 using GameCore.Utils.Extensions;
 using GameCore.Utils.Positions;
-using GameInfrastructure.Pathfinder.Interfaces;
 using System;
 using System.Collections.Generic;
 
 namespace GameInfrastructure.Pathfinder
 {
-    public class AStarPathfinder : IPathfinder
+    public class AStarPathfinder
     {
         private readonly GridSystem system;
         private readonly AStar pathfinder;

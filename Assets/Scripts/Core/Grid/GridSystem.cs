@@ -1,5 +1,4 @@
 using GameCore.Grid.Interfaces;
-using GameCore.Grid.Settings;
 using GameCore.Utils.Directions;
 using GameCore.Utils.Extensions;
 using GameCore.Utils.Positions;
@@ -7,7 +6,21 @@ using System.Collections.Generic;
 
 namespace GameCore.Grid
 {
-    public class GridSystem : IGridSystem
+    public class GridConfig
+    {
+        public int Width { get; }
+        public int Height { get; }
+        public float CellSize { get; }
+
+        public GridConfig(int width, int height, float cellSize = 1f)
+        {
+            Width = width;
+            Height = height;
+            CellSize = cellSize;
+        }
+    }
+
+    public class GridSystem
     {
         public readonly GridConfig Config;
         public INavigationNode[,] Nodes { get; }
@@ -20,7 +33,7 @@ namespace GameCore.Grid
 
             for (int y = 0; y < config.Height; y++)
                 for (int x = 0; x < config.Width; x++)
-                    Nodes[x, y] = new GridCell(x, y, GetMovementCost(x, y));
+                    Nodes[x, y] = new GridCell(x, y, 1);
 
             AddNeighbors();
         }
@@ -69,11 +82,6 @@ namespace GameCore.Grid
                     Nodes[x, y].AddNeighbors(neighbours);
                 }
             }
-        }
-
-        private float GetMovementCost(int x, int y)
-        {
-            return Config.MovementCostProvider.GetMovementCost(x, y);
         }
     }
 }
