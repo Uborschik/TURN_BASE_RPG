@@ -81,6 +81,6 @@ namespace GameCore.Utils.Random
             return RollNumBetween(1, 100) <= percent;
         }
 
-        public static bool RollBool() => Instance.Next(2) == 0;
+        public static bool RollCoin() => Instance.Next(2) == 0;
     }
 }

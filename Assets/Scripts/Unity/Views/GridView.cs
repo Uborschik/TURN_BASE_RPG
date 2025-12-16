@@ -1,5 +1,7 @@
-using GameCore.Grid.Interfaces;
+using GameCore.Interfaces;
+using GameCore.Utils.Positions;
 using GameUnity.Adapters;
+using UnityEngine;
 
 namespace GameUnity.Views
 {
@@ -10,6 +12,11 @@ namespace GameUnity.Views
         public GridView(TilemapAdapter renderer)
         {
             this.renderer = renderer;
+        }
+
+        public Vector2 GridToWorld(Position2Int position)
+        {
+            return new Vector2(position.X + 0.5f, position.Y + 0.5f);
         }
 
         public void PaintAll(INavigationNode[,] grid)

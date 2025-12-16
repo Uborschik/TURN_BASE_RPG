@@ -1,7 +1,6 @@
 ﻿<Solution>
   <Project Path="VContainer.csproj" />
   <Project Path="Game.Unity.csproj" />
-  <Project Path="Game.Infrastructure.csproj" />
   <Project Path="Game.Core.csproj" />
   <Project Path="VContainer.Editor.csproj" />
 </Solution>

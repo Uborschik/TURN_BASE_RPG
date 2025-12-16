@@ -1,22 +1,13 @@
-using GameCore.Grid;
-using GameCore.Utils.Positions;
-using GameUnity.Settings;
+using System;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
 
 namespace GameUnity.Views
 {
+    [Serializable]
     public class SelectionTransforms
     {
-        public Transform Highlight { get; }
-        public Transform Select { get; }
-
-        public SelectionTransforms(Transform highlight, Transform select)
-        {
-            Highlight = highlight;
-            Select = select;
-        }
+        public Transform Highlight;
+        public Transform Select;
     }
 
     public class CellSelectionView
@@ -40,8 +31,7 @@ namespace GameUnity.Views
         {
             if (position == previousHighlightPosition) return;
 
-            if (!highlightedTileObj.gameObject.activeSelf)
-                highlightedTileObj.gameObject.SetActive(true);
+            highlightedTileObj.gameObject.SetActive(true);
 
             highlightedTileObj.position = position;
             previousHighlightPosition = position;
@@ -51,8 +41,7 @@ namespace GameUnity.Views
         {
             if (position == previousSelectPosition) return;
 
-            if (!selectedTileObj.gameObject.activeSelf)
-                selectedTileObj.gameObject.SetActive(true);
+            selectedTileObj.gameObject.SetActive(true);
 
             selectedTileObj.position = position;
             previousSelectPosition = position;

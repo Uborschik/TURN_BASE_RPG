@@ -1,6 +1,6 @@
 {
     "name": "Game.Unity",
-    "rootNamespace": "",
+    "rootNamespace": "GameUnity",
     "references": [
         "Unity.InputSystem",
         "VContainer",

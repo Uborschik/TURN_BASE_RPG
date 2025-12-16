@@ -17,5 +17,9 @@ namespace GameCore.Utils.Positions
         public override int GetHashCode() => HashCode.Combine(X, Y);
         public static bool operator ==(Position2Int left, Position2Int right) => left.Equals(right);
         public static bool operator !=(Position2Int left, Position2Int right) => !left.Equals(right);
+        public static Position2Int operator +(Position2Int left, Position2Int right) =>
+        new Position2Int(left.X + right.X, left.Y + right.Y);
+        public static Position2Int operator -(Position2Int left, Position2Int right) =>
+            new Position2Int(left.X - right.X, left.Y - right.Y);
     }
 }

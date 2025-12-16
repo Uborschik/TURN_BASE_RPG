@@ -1,5 +1,3 @@
-using GameCore.Grid;
-using GameCore.Grid.Settings;
 using UnityEngine;
 
 namespace GameUnity.Settings
